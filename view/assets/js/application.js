@@ -68,7 +68,21 @@
 
 
     }
+    function jackpot() {
+
+        var contentHolder = document.querySelector('.content-holder'),
+            interval;
+
+        function singleAnimation() {
+            addClass(contentHolder, 'jackpot');
+            setTimeout(removeClass, animationDuration, contentHolder, 'jackpot');
+        }
+
+        interval = setInterval(singleAnimation, 2 * animationDuration);
+    }
+    jackpot()
     function animate() {
+
         var wheels = [
             [
                 document.getElementById('image1'),
@@ -87,11 +101,10 @@
                 document.getElementById('jackpot-image3')
             ]
         ];
-
         setTimeout(animateWheel, 0, wheels[0]);
         setTimeout(animateWheel, animationDuration / 3, wheels[1]);
-        setTimeout(animateWheel, 2 * animationDuration / 3, wheels[2]);
 
+        setTimeout(animateWheel, 2 * animationDuration / 3, wheels[2]);
     }
     window.slotMachine.animate = animate;
     window.slotMachine.addClass = addClass;
