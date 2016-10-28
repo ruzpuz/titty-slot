@@ -12,7 +12,7 @@ hr {top:25%; width:100%; margin: 0 auto; border: 0; height: 1px; background-imag
 .slot-holder { position:relative; width:880px; margin: 0 auto; top:50px; height:480px; background-color: white; border-radius:1%; -webkit-border-radius: 1%; -moz-border-radius:1%;    display:flex; justify-content: center; align-items: center; flex-direction: column; }
 .slot-holder > * { width:95%; margin-top:40px; }
 
-.content-holder { position:absolute; height:65%; display: flex; flex-direction: row;  z-index: 1000; left:50%; top:0; transform: translate(-50%);  border-color: #fcf9f5;  border-radius:1%; background-color: #f1e7c6;  background: -moz-linear-gradient(top, #f3eed9, #f1e7c6 49.9%, #dbc7a7 50%, #e8d5b8 );  background: -webkit-gradient(linear, left top, left bottom, from(#f3eed9), color-stop(0.49, #f1e7c6), color-stop(.5, #dbc7a7), to(#e8d5b8) );  filter: progid:DXImageTransform.Microsoft.gradient(StartColorStr='#F3EED9', EndColorStr='#DBC7A7');}
+.content-holder { position:absolute; height:65%; display: flex; flex-direction: row; left:50%; top:0; transform: translate(-50%);  border-color: #fcf9f5;  border-radius:1%; background-color: #f1e7c6;  background: -moz-linear-gradient(top, #f3eed9, #f1e7c6 49.9%, #dbc7a7 50%, #e8d5b8 );  background: -webkit-gradient(linear, left top, left bottom, from(#f3eed9), color-stop(0.49, #f1e7c6), color-stop(.5, #dbc7a7), to(#e8d5b8) );  filter: progid:DXImageTransform.Microsoft.gradient(StartColorStr='#F3EED9', EndColorStr='#DBC7A7');}
 .content-holder > * { margin-top: 12px; margin-left: 6px; margin-right:6px; }
 .content-holder > *:last-child{ margin-right: 12px;}
 .content-holder > *:first-child{ margin-left: 12px;}
@@ -22,6 +22,10 @@ hr {top:25%; width:100%; margin: 0 auto; border: 0; height: 1px; background-imag
 .slot-image.gone { top:100%; }
 
 .content-holder.jackpot { outline: none; border-color: #fde295; box-shadow: 0 0 10px red;}
+
+.modal { width:100%; height: 100%; position:fixed; top:0; bottom:0;  }
+.modal-background  { top:0; bottom:0; width:100%; height: 100%; position:absolute; background-color: gray; opacity: 0.7}
+.modal-content { position:relative; width:880px; margin: 0 auto; top:50px; height:480px; background-color: white; z-index: 100; }
 
 .button-holder { display:flex; justify-content: center; align-items: center; }
 .button-holder button { margin-top:50%; transform:translate(0, -50%)}

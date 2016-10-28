@@ -80,7 +80,6 @@
 
         interval = setInterval(singleAnimation, 2 * animationDuration);
     }
-    jackpot()
     function animate() {
 
         var wheels = [
@@ -101,11 +100,13 @@
                 document.getElementById('jackpot-image3')
             ]
         ];
+
         setTimeout(animateWheel, 0, wheels[0]);
         setTimeout(animateWheel, animationDuration / 3, wheels[1]);
-
         setTimeout(animateWheel, 2 * animationDuration / 3, wheels[2]);
+        setTimeout(jackpot, 4 * animationDuration)
     }
+
     window.slotMachine.animate = animate;
     window.slotMachine.addClass = addClass;
     window.slotMachine.removeClass = removeClass;
