@@ -71,14 +71,19 @@
     function jackpot() {
 
         var contentHolder = document.querySelector('.content-holder'),
+            modal = document.querySelector('.modal'),
             interval;
 
         function singleAnimation() {
             addClass(contentHolder, 'jackpot');
             setTimeout(removeClass, animationDuration, contentHolder, 'jackpot');
         }
+        function startModal() {
+            addClass(modal, 'jackpot')
+        }
 
         interval = setInterval(singleAnimation, 2 * animationDuration);
+        setTimeout(startModal, 6 * animationDuration);
     }
     function animate() {
 

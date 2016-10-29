@@ -2,7 +2,7 @@ html body {width:100%; height:100%; background: url('../images/background.png');
 hr {top:25%; width:100%; margin: 0 auto; border: 0; height: 1px; background-image: linear-gradient(to right, rgba(169, 169, 169, 0), rgba(169, 169, 169, 0.75), rgba(169, 169, 169, 0)); }
 .animate { -moz-transition: all 0.5s linear; -webkit-transition: all 0.5s linear; -o-transition: all 0.5s linear; transition: all 0.5s linear;}
 .shadow { box-shadow: 0 1px 3px rgba(0, 0, 0, 0.6); -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.6); -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.6); }
-
+.p-50 { transform: scale(0.5);}
 .flex-separator {flex-grow: 1;}
 
 .btn { border: none; color: white; padding: 15px 32px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px;}
@@ -23,9 +23,11 @@ hr {top:25%; width:100%; margin: 0 auto; border: 0; height: 1px; background-imag
 
 .content-holder.jackpot { outline: none; border-color: #fde295; box-shadow: 0 0 10px red;}
 
-.modal { width:100%; height: 100%; position:fixed; top:0; bottom:0;  }
+.modal { display: none}
+.modal.jackpot { display: block; width:100%; height: 100%; position:fixed; top:0; bottom:0;  }
 .modal-background  { top:0; bottom:0; width:100%; height: 100%; position:absolute; background-color: gray; opacity: 0.7}
-.modal-content { position:relative; width:880px; margin: 0 auto; top:50px; height:480px; background-color: white; z-index: 100; }
+.modal-content { position:relative; width:880px; margin: 0 auto; top:50px; height:580px; background-color: white; z-index: 100;  display: flex; flex-direction: column; justify-content: center; align-items: center;}
+.modal-jackpot { height:150px;}
 
 .button-holder { display:flex; justify-content: center; align-items: center; }
 .button-holder button { margin-top:50%; transform:translate(0, -50%)}
