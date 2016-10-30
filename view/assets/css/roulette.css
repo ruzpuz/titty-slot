@@ -25,8 +25,10 @@ hr {top:25%; width:100%; margin: 0 auto; border: 0; height: 1px; background-imag
 
 .modal { display: none}
 .modal.jackpot { display: block; width:100%; height: 100%; position:fixed; top:0; bottom:0;  }
-.modal-background  { top:0; bottom:0; width:100%; height: 100%; position:absolute; background-color: gray; opacity: 0.7}
-.modal-content { position:relative; width:880px; margin: 0 auto; top:50px; height:580px; background-color: white; z-index: 100;  display: flex; flex-direction: column; justify-content: center; align-items: center;}
+.modal-background {opacity:0;}
+.jackpot .modal-background  { top:0; bottom:0; width:100%; height: 100%; position:absolute; background-color: gray; opacity: 0.7 }
+.modal-content {position:absolute; top:-880px; z-index: 100;}
+.jackpot .modal-content { position:absolute; width:880px; left:50%; margin-left:-440px; top:50px; height:580px; background-color: white; z-index: 100;  display: flex; flex-direction: column; justify-content: center; align-items: center;}
 .modal-jackpot { height:150px;}
 
 .button-holder { display:flex; justify-content: center; align-items: center; }

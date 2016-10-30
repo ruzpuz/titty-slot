@@ -25,7 +25,8 @@
     }
     function animateWheel(images) {
         var animationActive = false,
-            stopAnimation = false
+            stopAnimation = false;
+
         function finishAnimation() {
 
             removeClass(images[0], 'animate');
@@ -68,22 +69,36 @@
 
 
     }
+    function clearModal() {
+        removeClass(document.querySelector('.modal'), 'jackpot');
+    }
+    function startModal() {
+        addClass(document.querySelector('.modal'), 'jackpot');
+    }
+    function resetSlot() {
+        removeClass(document.getElementById('jackpot-image1'), 'jackpot');
+        removeClass(document.getElementById('jackpot-image2'), 'jackpot');
+        removeClass(document.getElementById('jackpot-image3'), 'jackpot');
+
+    }
     function jackpot() {
 
         var contentHolder = document.querySelector('.content-holder'),
-            modal = document.querySelector('.modal'),
             interval;
 
         function singleAnimation() {
             addClass(contentHolder, 'jackpot');
             setTimeout(removeClass, animationDuration, contentHolder, 'jackpot');
         }
-        function startModal() {
-            addClass(modal, 'jackpot')
-        }
 
         interval = setInterval(singleAnimation, 2 * animationDuration);
-        setTimeout(startModal, 6 * animationDuration);
+        setTimeout(function() {
+            startModal();
+            removeClass(contentHolder, 'jackpot');
+            resetSlot();
+            clearInterval(interval);
+        }, 6 * animationDuration);
+
     }
     function animate() {
 
@@ -115,4 +130,5 @@
     window.slotMachine.animate = animate;
     window.slotMachine.addClass = addClass;
     window.slotMachine.removeClass = removeClass;
+    window.slotMachine.clearModal = clearModal;
 }());
