@@ -10,6 +10,7 @@
 
         function startServer() {
             useStaticFolders();
+            includeApiRoutes();
             var httpServer = http.createServer(app);
             httpServer.listen(8080);
         }
@@ -17,7 +18,7 @@
             app.use('/', serveStatic('./view'));
         }
         function includeApiRoutes() {
-
+            require('./api/boobs/get/boobs.route')(app);
         }
         startServer();
 }());
