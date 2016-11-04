@@ -100,6 +100,20 @@
         }, 6 * animationDuration);
 
     }
+    function getBoobs() {
+        var request = new XMLHttpRequest();
+        request.open('GET', '/api/boobs', true);
+
+        request.onreadystatechange = function () {
+            if (request.readyState !== 4) {
+                return;
+            }
+            if (request.status === 200) {
+                document.getElementById('jackpot-image').src = '/assets/images/boobs/' + JSON.parse(request.responseText);
+            }
+        };
+        request.send();
+    }
     function animate() {
 
         var wheels = [
@@ -131,4 +145,5 @@
     window.slotMachine.addClass = addClass;
     window.slotMachine.removeClass = removeClass;
     window.slotMachine.clearModal = clearModal;
+    window.slotMachine.getBoobs = getBoobs;
 }());
