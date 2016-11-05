@@ -93,6 +93,7 @@
 
         interval = setInterval(singleAnimation, 2 * animationDuration);
         setTimeout(function() {
+            getBoobs();
             startModal();
             removeClass(contentHolder, 'jackpot');
             resetSlot();
