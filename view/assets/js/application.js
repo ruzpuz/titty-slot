@@ -1,6 +1,9 @@
 (function () {
     window.slotMachine = {};
-    var animationDuration = 600;
+    var animationDuration = 600,
+        audio = new Audio('/assets/sounds/slot.mp3');
+
+    audio.currentTime = 5;
 
     function hasClass(el, className) {
         if (el.classList) {
@@ -28,7 +31,8 @@
             stopAnimation = false;
 
         function finishAnimation() {
-
+            audio.pause();
+            audio.currentTime = 5;
             removeClass(images[0], 'animate');
             removeClass(images[0], 'gone');
 
@@ -93,7 +97,6 @@
 
         interval = setInterval(singleAnimation, 2 * animationDuration);
         setTimeout(function() {
-            getBoobs();
             startModal();
             removeClass(contentHolder, 'jackpot');
             resetSlot();
@@ -136,6 +139,7 @@
             ]
         ];
 
+        setTimeout(function() {getBoobs(); audio.play()});
         setTimeout(animateWheel, 0, wheels[0]);
         setTimeout(animateWheel, animationDuration / 3, wheels[1]);
         setTimeout(animateWheel, 2 * animationDuration / 3, wheels[2]);
