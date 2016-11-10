@@ -1,9 +1,10 @@
 (function () {
     window.slotMachine = {};
     var animationDuration = 600,
-        audio = new Audio('/assets/sounds/slot.mp3');
+        slotAudio = new Audio('/assets/sounds/slot.mp3'),
+        jackpotAudio = new Audio('/assets/sounds/jackpot.mp3');
 
-    audio.currentTime = 5;
+    slotAudio.currentTime = 5;
 
     function hasClass(el, className) {
         if (el.classList) {
@@ -31,8 +32,8 @@
             stopAnimation = false;
 
         function finishAnimation() {
-            audio.pause();
-            audio.currentTime = 5;
+            slotAudio.pause();
+            slotAudio.currentTime = 5;
             removeClass(images[0], 'animate');
             removeClass(images[0], 'gone');
 
@@ -139,7 +140,7 @@
             ]
         ];
 
-        setTimeout(function() {getBoobs(); audio.play()});
+        setTimeout(function() {getBoobs(); slotAudio.play()});
         setTimeout(animateWheel, 0, wheels[0]);
         setTimeout(animateWheel, animationDuration / 3, wheels[1]);
         setTimeout(animateWheel, 2 * animationDuration / 3, wheels[2]);
