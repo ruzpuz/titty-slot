@@ -97,8 +97,10 @@
         }
 
         interval = setInterval(singleAnimation, 2 * animationDuration);
+        setTimeout(function() { jackpotAudio.play(); }, 3 * animationDuration);
         setTimeout(function() {
             startModal();
+            jackpotAudio.pause();
             removeClass(contentHolder, 'jackpot');
             resetSlot();
             clearInterval(interval);
