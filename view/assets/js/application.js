@@ -1,4 +1,6 @@
 (function () {
+    'use strict';
+
     window.slotMachine = {};
     var animationDuration = 600,
         slotAudio = new Audio('/assets/sounds/slot.mp3'),
@@ -70,7 +72,7 @@
         setTimeout(animationCircle, 0, images[0]);
         setTimeout(animationCircle, animationDuration / 3, images[1]);
         setTimeout(animationCircle, 2 * animationDuration / 3, images[2]);
-        setTimeout(function () { stopAnimation = true; }, 6 * animationDuration)
+        setTimeout(function () { stopAnimation = true; }, 6 * animationDuration);
 
 
     }
@@ -142,11 +144,14 @@
             ]
         ];
 
-        setTimeout(function() {getBoobs(); slotAudio.play()});
+        setTimeout(function() {
+            getBoobs();
+            slotAudio.play();
+        });
         setTimeout(animateWheel, 0, wheels[0]);
         setTimeout(animateWheel, animationDuration / 3, wheels[1]);
         setTimeout(animateWheel, 2 * animationDuration / 3, wheels[2]);
-        setTimeout(jackpot, 4 * animationDuration)
+        setTimeout(jackpot, 4 * animationDuration);
     }
 
     window.slotMachine.animate = animate;

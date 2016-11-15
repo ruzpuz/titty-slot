@@ -23,7 +23,7 @@
                         "message" : 'No files found - switch to default one'
                     });
                 } else {
-                    callback(null, files[Math.floor(Math.random() * files.length)])
+                    callback(null, files[Math.floor(Math.random() * files.length)]);
                 }
             }
         }
@@ -31,6 +31,6 @@
     }
     module.exports = {
         getRandomPicture : getRandomPicture
-    }
+    };
 
 }());
